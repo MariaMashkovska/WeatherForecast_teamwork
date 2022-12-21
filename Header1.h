@@ -22,7 +22,7 @@ public:
     float temp;
     int humidity;
     float windspeed;
-    type weatherType;
+    type weather_type;
 
     Weather() {
         day = 000;
@@ -31,22 +31,23 @@ public:
         temp = 000;
         humidity = 000;
         windspeed = 000;
-        weatherType = NONE;
+        weather_type = NONE;
     }
 
-    Weather(int d, string ci, string co, float t, int h, float w, type s) {
-        day = d;
-        city = ci;
-        country = co;
-        temp = t;
-        humidity = h;
-        windspeed = w;
-        weatherType = s;
+    Weather(int day1, string city1, string country1, float temp1, int humidity1, float windspeed1, type weather_type1) {
+        day = day1;
+        city = city1;
+        country = country1;
+        temp = temp1;
+        humidity = humidity1;
+        windspeed = windspeed1;
+        weather_type = weather_type1;
     }
 
     ~Weather() {
 
     }
+    
     void Print() {
         cout << "Day: " << day << endl;
         cout << "City: " << city << endl;
@@ -54,11 +55,11 @@ public:
         cout << "Temperature: " << temp << endl;
         cout << "Humidity: " << humidity << endl;
         cout << "Windspeed: " << windspeed << endl;
-        cout << "Type: " << weatherType << endl;
+        cout << "Type: " << weather_type << endl;
     }
 
-    void isLvivWeather() {
-        if (humidity >= 80 && weatherType == RAINY) {
+    void IsLvivWeather() {
+        if (humidity >= 80 && weather_type == RAINY) {
             cout << "Typical weather in Lviv" << endl;
         }
         else {
@@ -69,53 +70,53 @@ public:
 
 class WeatherCalendar {
 public:
-    Weather WeatherItem;
+    Weather weather_item;
 
-    vector <Weather> allWeatherDays;
+    vector <Weather> all_weather_days;
 
-    vector <Weather> addWeatherItem(Weather WeatherItem) {
-        allWeatherDays.push_back(WeatherItem);
-        return allWeatherDays;
+    vector <Weather> AddWeatherItem(Weather weather_item) {
+        all_weather_days.push_back(weather_item);
+        return all_weather_days;
     }
 
 
-    float findMaxTemprature(int randomDay) {
-        float maxTemp = 0;
-        int daysFound = 0;
+    float FindMaxTemprature(int random_day) {
+        float max_temp = 0;
+        int days_found = 0;
 
-        for (int i = 0; i < allWeatherDays.size(); i++) {
+        for (int i = 0; i < all_weather_days.size(); i++) {
 
-            if (allWeatherDays[i].day == randomDay) {
-                daysFound = 1;
-                if (allWeatherDays[i].temp > maxTemp) {
-                    maxTemp = allWeatherDays[i].temp;
+            if (all_weather_days[i].day == random_day) {
+                days_found = 1;
+                if (all_weather_days[i].temp > max_temp) {
+                    max_temp = all_weather_days[i].temp;
                 }
             }
 
         }
-        if (daysFound == 0) {
+        if (days_found == 0) {
             cout << "NOT ENOUGH DATA";
         }
 
-        return maxTemp;
+        return max_temp;
 
     }
 
-    void bubbleSort()
+    void BubbleSort()
     {
         int i, j;
-        for (i = 0; i < allWeatherDays.size() - 1; i++) {
+        for (i = 0; i < all_weather_days.size() - 1; i++) {
 
-            for (j = 0; j < allWeatherDays.size() - i - 1; j++) {
-                if (allWeatherDays[j].day > allWeatherDays[j + 1].day) {
-                    swap(allWeatherDays[j], allWeatherDays[j + 1]);
+            for (j = 0; j < all_weather_days.size() - i - 1; j++) {
+                if (all_weather_days[j].day > all_weather_days[j + 1].day) {
+                    swap(all_weather_days[j], all_weather_days[j + 1]);
                 }
             }
         }
     }
     void PrintVector() {
-        for (int i = 0; i < allWeatherDays.size(); i++) {
-            cout << allWeatherDays[i].day << endl;
+        for (int i = 0; i < all_weather_days.size(); i++) {
+            cout << all_weather_days[i].day << endl;
         }
     }
 

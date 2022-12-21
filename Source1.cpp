@@ -2,7 +2,7 @@
 #include <string>
 #include <vector>
 #include <optional>
-#include <D:\lab5\lab.5\Header1.h>
+#include <D:\projects\WeatherForecast_teamwork\Header1.h>
 using namespace std;
 
 
@@ -18,21 +18,21 @@ int main() {
     Weather h(3, "Lviv", "Ukraine", -23, 80, 15, RAINY);
 
     WeatherCalendar Calendar;
-    Calendar.addWeatherItem(d);
-    Calendar.addWeatherItem(a);
-    Calendar.addWeatherItem(b);
-    Calendar.addWeatherItem(e);
-    Calendar.addWeatherItem(c);
-    Calendar.addWeatherItem(f);
-    Calendar.addWeatherItem(g);
-    Calendar.addWeatherItem(h);
+    Calendar.AddWeatherItem(d);
+    Calendar.AddWeatherItem(a);
+    Calendar.AddWeatherItem(b);
+    Calendar.AddWeatherItem(e);
+    Calendar.AddWeatherItem(c);
+    Calendar.AddWeatherItem(f);
+    Calendar.AddWeatherItem(g);
+    Calendar.AddWeatherItem(h);
     e.Print();
-    e.isLvivWeather();
-    Calendar.bubbleSort();
+    e.IsLvivWeather();
+    Calendar.BubbleSort();
     Calendar.PrintVector();
-    cout << "\nThe highest temperature "<< Calendar.findMaxTemprature(15) << endl;
-    cout << "\nThe highest temperature " << Calendar.findMaxTemprature(14) << endl;
-    cout << "\nThe highest temperature " << Calendar.findMaxTemprature(3) << endl;
+    cout << "\nThe highest temperature "<< Calendar.FindMaxTemprature(15) << endl;
+    cout << "\nThe highest temperature " << Calendar.FindMaxTemprature(14) << endl;
+    cout << "\nThe highest temperature " << Calendar.FindMaxTemprature(3) << endl;
 
 
 
