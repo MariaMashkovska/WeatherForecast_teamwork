@@ -21,7 +21,7 @@ public:
     string country;
     float temp;
     int humidity;
-    float windspeed;
+    float wind_speed;
     type weather_type;
 
     Weather() {
@@ -30,23 +30,21 @@ public:
         country = "000";
         temp = 000;
         humidity = 000;
-        windspeed = 000;
+        wind_speed = 000;
         weather_type = NONE;
     }
 
-    Weather(int day1, string city1, string country1, float temp1, int humidity1, float windspeed1, type weather_type1) {
+    Weather(int day1, string city1, string country1, float temp1, int humidity1, float wind_speed1, type weather_type1) {
         day = day1;
         city = city1;
         country = country1;
         temp = temp1;
         humidity = humidity1;
-        windspeed = windspeed1;
+        wind_speed = wind_speed1;
         weather_type = weather_type1;
     }
 
-    ~Weather() {
-
-    }
+    ~Weather() {}
     
     void Print() {
         cout << "Day: " << day << endl;
@@ -54,7 +52,7 @@ public:
         cout << "Country: " << country << endl;
         cout << "Temperature: " << temp << endl;
         cout << "Humidity: " << humidity << endl;
-        cout << "Windspeed: " << windspeed << endl;
+        cout << "Windspeed: " << wind_speed << endl;
         cout << "Type: " << weather_type << endl;
     }
 
